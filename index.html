@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+   <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>WebDev</title>
+        <link rel="stylesheet" href="main.css">
+        <!--For Bootstrap collapse-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!--For Themes-->
+        <script src="scripts/scripts.js"></script>
+        <!--For fas icons-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    </head>
+
+
+   <body>
+      <!--------------SIDEBAR WRAPPER-------------->
+      <div class="container-fluid">
+         <div class="row" >
+
+            <!--Sidebar-->
+            <ul class="navbar-nav sidebar col-2 col-sm-2 col-md-3">
+
+                <h5 class="sidebar-brand-text text-center">
+                    <div id="logo">WebDev</div>
+                </h5>
+
+                <div id="container-sidebar-ul">
+                    <!-- Nav Item - Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">
+                        <span class="link-navbar" id="home-tab">Home</span></a>
+                    </li>
+
+                    <!-- Nav Item - Utilizador -->
+                    <li class="nav-item">
+                        <a class="nav-link" id="user-tab" href="index.html">
+                            <span class="link-navbar-active" id="user-tab">Utilizador</span>
+                        </a>
+                    </li>
+
+                    <!-- Nav Item - Quantum -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="stuff1.html">
+                            <span class="link-navbar" id="solum-tab">Quantum Solum</span>
+                        </a>
+                    </li>
+
+                    <!-- Nav Item - Marcela -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="stuff2.html">
+                            <span class="link-navbar" id="name-tab">Marcela Silva</span>
+                        </a>
+                    </li>
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider" style="width: 80%; ">
+
+                    <!--Join the light side-->
+                    <li class="nav-item-theme">
+                        <a class="nav-link" onclick="lightSide()" style="cursor: pointer;">
+                            <span id="img-light-side"></span>
+                            <span class="theme-color-links">Join the light</span>
+                        </a>
+                    </li>
+
+                    <!--Join the dark side-->
+                    <li class="nav-item-theme teste">
+                        <a class="nav-link" onclick="darkSide()" style="cursor: pointer;">
+                            <span id="img-dark-side"></span>
+                            <span class="theme-color-links">Join the dark</span>
+                        </a>
+                    </li>
+
+                </div><!--./container-sidebar-ul-->
+
+                <li class="nav-item">
+                    <span id="copyrights">2019 - premium-minds.com</span>
+                </li>
+
+            </ul><!--./div Sidebar-->
+
+            <!--------------CONTENT WRAPPER-------------->
+            <div class="col-10 col-sm-10 col-md-9" id="content-page">
+
+                <!--Form Wrapper-->
+                <div class="container-main-content container-fluid">
+
+                    <h2>Utilizador</h2>
+
+                    <!--Form-->
+                    <form action="#" method="POST" class="needs-validation" name="myForm" id="userForm" novalidate>
+
+                        <!--Card - Tipo de Utilizador-->
+                        <div class="card border-0">
+                            <div class="card-header" data-toggle="collapse" data-target="#usertype">
+                                <span class="subseciton-title">Tipo de Utilizador</span>
+                            </div><!--./card-header-->
+                            <div class="card-body collapse show group-form" id="usertype">
+                                <div class="form-check" id="form-check-container">
+                                        <!--Position 1-->
+                                        <label class="form-check-label">Project Manager
+                                            <input type="checkbox" class="form-check-input" name="position1" value="Project-Manager" id="checkOne" oninput="checkboxValidation()" />
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <!--Position 2-->
+                                        <label class="form-check-label">Developer
+                                            <input type="checkbox" class="form-check-input" name="position2" value="Developer" id="checkTwo" oninput="checkboxValidation()" />
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <!--Position 3-->
+                                        <label class="form-check-label">Architect
+                                            <input type="checkbox" class="form-check-input" name="position3" value="Architect" id="checkThree" oninput="checkboxValidation()" />
+                                            <span class="checkmark"></span>
+                                        </label>
+                                   <div id="checkboxes-error-msn"></div><!--error msg check at least one-->
+                                </div><!--./div form-check-->
+                            </div><!--./card-body-->
+                        </div><!--./card -->
+
+                        <!--Card - -->
+                        <div class="card border-0">
+                            <div class="card-header" data-toggle="collapse" data-target="#contact">
+                                <a class="collapsible">
+                                    <span class="subseciton-title">Contacto</span>
+                                </a>
+                            </div><!--./card-header-->
+                            <div class="card-body collapse show" id="contact">
+                                <div id="contact-wrapper">
+                                    <div class="row">
+                                        <!--Email-->
+                                        <div class="col-6">
+                                            <label >Email</label>
+                                            <input id="email" type="email" class="form-control" name="userId" autocomplete="off" placeholder="Insira o seu email" oninput="emailValidation()" required/>
+                                            <span id="emailErrorMsn"></span>
+                                        </div>
+                                        <!--Password-->
+                                        <div class="col-6">
+                                            <label class="form-contact-label">Palavra-Passe</label>
+                                            <input id="pass" type="password" class="form-control" name="pass" autocomplete="off" placeholder="Insira a sua palavra-passe" oninput="passValidation()" required/>
+                                            <span id="passErrorMsn"></span>
+                                        </div>
+                                    </div><!--./div row-->
+
+                                    <div class="row">
+                                        <!--PhoneNumber-->
+                                        <div class="col-6">
+                                            <label class="form-contact-label" id="tel-label">Telefone</label>
+                                            <input id="phoneNumber" type="tel" class="form-control" name="contact" autocomplete="off" placeholder="+351" oninput="phoneNumberValidation()" required/>
+                                            <span id="phoneNumberErrorMsn"></span>
+                                        </div>
+                                    </div><!--./div row-->
+                                </div><!--./-->
+                            </div><!--./card-body-->
+                        </div><!--./card -->
+                        <!--Buttons-->
+                        <div class="float-right buttons-wrapper">
+                            <button class="btn" id="cancelButton" type="button" onclick="resetAnswers()" form="userForm">Cancelar</inpu>
+                            <button class="btn" id="saveButton" type="button" onclick="submitAnswers()" form="userForm" >Guardar</button>
+                        </div><!--onclick="validationForm()"-->
+                    </form><!--./form-->
+                </div><!--./div Form Wrapper-->
+
+            </div><!--./div Content Wrapper-->
+
+        </div><!--./row Page Wrapper-->
+    </div> <!--./container-fluid Page Wrapper-->
+
+
+    <script>
+
+        /*Input variables*/
+        var email, pass, phoneNumber;
+        var checkboxNbOne, checkboxNbTwo, checkboxNbThree;
+
+        /*Only submit if all inputs are only if all inputs are filled*/
+        function submitAnswers(phoneNumber) {
+            if (emailValidation() == true && passValidation() == true && phoneNumberValidation() == true && checkboxValidation() == true) {
+                // emailValidation() == true && passValidation() == true && phoneNumberValidation() == true && checkboxValidation() == true
+                alert("all done :)");
+            } else {
+                alert("Fill in all fields :(");
+                ///document.getElementById("checkboxes-error-msn").innerHTML = 'Check at least one checkbox';
+            }
+        }
+
+        /*Reset input answers*/
+        function resetAnswers() {
+            //Erase inputs
+            document.getElementById("email").value = "";
+            document.getElementById("pass").value = "";
+            document.getElementById("phoneNumber").value = "";
+
+            //Erase checkbox checked
+            document.getElementById("checkOne").checked = false;
+            document.getElementById("checkTwo").checked = false;
+            document.getElementById("checkThree").checked = false;
+
+            //Erase error messages
+            document.getElementById("checkboxes-error-msn").innerHTML = '';
+            document.getElementById("emailErrorMsn").innerHTML = '';
+            document.getElementById("passErrorMsn").innerHTML = '';
+            document.getElementById("phoneNumberErrorMsn").innerHTML = '';
+        }
+
+        function checkboxValidation() {
+            checkboxNbOne = document.getElementById("checkOne");
+            checkboxNbTwo = document.getElementById("checkTwo");
+            checkboxNbThree = document.getElementById("checkThree");
+
+            if (!checkboxNbOne.checked && !checkboxNbTwo.checked && !checkboxNbThree.checked) {
+                document.getElementById("checkboxes-error-msn").innerHTML = 'Check at least one checkbox';
+                return false;
+
+            } else {
+                document.getElementById("checkboxes-error-msn").innerHTML = '';
+                return true;
+            }
+        }
+
+        function emailValidation() {
+            /*Input variables*/
+            email = document.forms["userForm"]["email"].value;
+
+            /*Regex Expression*/
+            const regexValidEmail = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
+
+           /* Email Validation*/
+           if (email == "") {
+                document.getElementById("emailErrorMsn").innerHTML = 'Introduza o seu email';
+                return false;
+
+           } else if (!regexValidEmail.test(email)) {
+                document.getElementById("emailErrorMsn").innerHTML = 'Introduza um email válido';
+                return false;
+           } else {
+                document.getElementById("emailErrorMsn").innerHTML = '';//Passed in Email validation, so delete emailErrorMsn
+                return true;
+           }
+        }
+
+        function passValidation() {
+
+            /*Input variable*/
+            pass = document.forms["userForm"]["pass"].value;
+
+            /*Regex Expression*/
+            const regexHasLowercase = /[a-z]/;
+            const regexHasUppercase = /[A-Z]/;
+            const regexHasNumber = /[0-9]/;
+
+            /* Password Validation*/
+            if (pass.value == "") {
+                document.getElementById("passErrorMsn").innerHTML = 'Introduza uma palavra-passe';
+                return false;
+
+            } else if (pass.length < 6) {
+                document.getElementById("passErrorMsn").innerHTML = 'Erro: mínimo de 6 caracteres';
+                return false;
+
+            } else if (!regexHasLowercase.test(pass)) {
+                document.getElementById("passErrorMsn").innerHTML = 'Error: mínimo de uma letra minúscula';
+                return false;
+
+            } else if (!regexHasUppercase.test(pass)) {
+                document.getElementById("passErrorMsn").innerHTML = 'Error: mínimo de uma letra MAIÚSCULA';
+                return false;
+
+            } else if (!regexHasNumber.test(pass)) {
+                document.getElementById("passErrorMsn").innerHTML = 'Error: mínimo de um número ';
+                return false;
+
+            } else {
+                document.getElementById("passErrorMsn").innerHTML = ''; //Passed in Password validation, so delete passErrorMsn
+                return true;
+            }
+        }
+
+        function phoneNumberValidation() {
+
+            /*Input variable*/
+            phoneNumber = document.forms["userForm"]["phoneNumber"].value;
+            let phoneNumberSpace;
+            /*Regex Expression*/
+            const regexValidEmail = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+            const regexHasDotCharacter = /[.]/;
+
+            /*Phone Number Auto-Formatting*/
+            /*$('#phoneNumber').keyup(function () {
+                phoneNumber = $('#phoneNumber').val().split(" ").join(""); // the actual phone number (without spaces)
+                console.log(phoneNumber);
+                if (phoneNumber.length >= 0) {
+                    phoneNumberSpace = phoneNumber.match(new RegExp('.{1,3}', 'g')).join(" "); // the phone number (with spaces)
+                    console.log(phoneNumberSpace);
+                }
+            $('#phoneNumber').val(phoneNumberSpace);// prints phone number (with spaces) to the screen*/
+
+            /* Phone Number Validation*/
+            if (phoneNumber == "") {
+                    document.getElementById("phoneNumberErrorMsn").innerHTML = 'Introduza um número telefónico';
+                    return false;
+                } else if (phoneNumber.length != 9) {
+                    document.getElementById("phoneNumberErrorMsn").innerHTML = 'O número telefónico deve ter apenas 9 caracteres';
+                    return false;
+                } else if (isNaN(phoneNumber) || regexHasDotCharacter.test(phoneNumber)) {
+                    document.getElementById("phoneNumberErrorMsn").innerHTML = 'Introduza apenas números';
+                    return false;
+                } else {
+                    document.getElementById("phoneNumberErrorMsn").innerHTML = ''; //Passed in Phone Number validation, so delete phoneNumberErrorMsn
+                    return true;
+                }
+
+            //});// end of Phone Number Auto-Formatting
+
+            }
+      </script>
+
+
+   </body>
+
+</html>

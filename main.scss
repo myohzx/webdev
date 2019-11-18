@@ -1,0 +1,416 @@
+// Option A: Include all of Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+/*
+Style Variables
+*/
+$primaryColor: #6A71C5;
+$secondaryColor:  rgb(207, 215, 248);
+$contentTitlesColor: #6A6A6A;
+$borderCardsColor: rgb(235, 235, 235);
+$headerCardBackgroundColor: #F8F9FC;
+$inputInitialBackgroundColor: #eee;
+$hoverBackground:  rgb(230, 230, 230);
+$backgroundContentPage: #F1F2F5;
+$boxShadowColor: rgba(220, 220, 220, 0.66);
+$radiusButtonValue: 40px;
+$errorMsg: #e55039;
+$linkNavbarHover: #F0F1F3;
+
+/*
+ Style Functions
+*/
+@mixin styleLinksNavbar {
+   font-size: 15px;
+   color: $contentTitlesColor;
+   font-weight: 400;
+   padding: 13px 26px;
+   text-decoration: none;
+   border-radius: 50px;
+   display: block;
+}
+
+
+html, body {
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   background-color: $backgroundContentPage;
+   position: fixed;
+}
+
+
+/*   -------------- SIDEBAR --------------   */
+
+/*
+Logo
+*/
+#logo {
+   content: url(./icons/LOGO-WDR@2x_challenge.png);
+   width: 120px;
+   margin: 0 auto;
+   margin-top: 20px;
+}
+
+/*
+Sidebar base
+*/
+.navbar-nav {
+   background-color: white;
+   border-radius: 0 25px 25px 0;
+   box-shadow: 5px 2px 10px 6px $boxShadowColor;
+   z-index: 2;
+   height: 100vh;
+}
+
+/*
+Main Links / Tab
+*/
+#container-sidebar-ul {
+   width: 70%;
+   margin: 0 auto;
+   margin-top: 30px;
+}
+
+.link-navbar{
+   @include styleLinksNavbar();
+   background-color: transparent;
+}
+
+.link-navbar:hover{ /*.link-navbar:active*/
+   background-color: $linkNavbarHover;
+}
+
+.link-navbar-active {
+   @include styleLinksNavbar();
+   color: white;
+   background-color: lighten($primaryColor, 5%);
+}
+
+hr {
+   width: 100% !important;
+   margin-top: 40px;
+   margin-bottom: 15px;
+   border-top: 1px solid lighten($primaryColor, 35%);
+}
+
+/*
+Theme Links
+*/
+.theme-color-links {
+   font-size: 13px;
+   color: lighten($contentTitlesColor, 30%);
+   font-weight: 400;
+   position: absolute;
+   padding-left: 10px;
+}
+
+#img-light-side {
+   content: url(./icons/005-rebel-alliance-1_challenge.png);
+   width: 20px;
+   margin-left: 28px;
+}
+
+#img-dark-side {
+   content: url(./icons/004-death-star-1_challenge.png);
+   width: 20px;
+   margin-left: 28px;
+}
+
+/*
+footer
+ */
+#copyrights {
+   width: 100%;
+   font-size: 12px;
+   position: absolute;
+   bottom: 0;
+   margin: 0 auto;
+   text-align: center;
+   padding-bottom: 15px;
+   color: $primaryColor;
+}
+
+
+
+
+
+/*   -------------- CONTENT PAGE --------------   */
+#content-page {
+   height: 100vh;
+   background-color: $backgroundContentPage;
+}
+
+.container-main-content {
+   width: 100%;
+   float: left;
+   margin-top: 36px;
+   padding: 0 15px;
+   // border: 1px solid red;
+}
+
+h2 {
+   font-size: 25px;
+   color: $contentTitlesColor;
+   font-weight: 400;
+}
+
+.card {
+   margin-top: 35px;
+   box-shadow: 5px 2px 10px 6px $boxShadowColor;
+
+   .card-header {
+      height: 60px;
+      text-align: left;
+      background-color: $headerCardBackgroundColor;
+      border: 1px solid $borderCardsColor;
+      font-size: 15px;
+      color: $primaryColor;
+      cursor: pointer;
+   }
+
+   .card-body {
+      background-color: white;
+      border: 1px solid white;
+      padding-top: 10px;
+      padding-bottom: 20px;
+   }
+}
+
+.subseciton-title {
+   line-height: 35px;
+   font-size: 1.1em;
+}
+
+.form-check-label { /*Checkbox label*/
+   display: block;
+   position: relative;
+   padding-left: 35px;
+   margin: 20px -16px 10px;
+
+   input:checked ~ .checkmark{ /*checkbox check color*/
+      background-color: $secondaryColor;
+   }
+
+   input:checked ~ .checkmark:after { /* Show the checkmark when checked */
+      display: block;
+   }
+
+   .checkmark { // Custom checkbox
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 23px;
+      width: 23px;
+      background-color: $inputInitialBackgroundColor;
+      margin-top: 1px;
+      cursor: pointer;
+    }
+
+   .checkmark:after { /*Custom checkbox symbol (hidden when not checked)*/
+      content: "";
+      position: absolute;
+      display: none;
+      left: 9px;
+      top: 5px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+}
+
+.checkmark:hover {
+   background-color: $hoverBackground;
+}
+
+.form-check-input {
+   cursor: pointer;
+   appearance: none;
+}
+
+
+#contact-wrapper {
+   margin-top: 10px;
+
+   input, input[placeholder] {
+      border: none;
+      background-color: $inputInitialBackgroundColor;
+      border-radius: 40px;
+      outline-width: 0 !important;
+      box-shadow: none !important;
+      font-size: 13px;
+      height: 42px;
+      padding-left: 23px;
+   }
+
+
+   input:focus {
+      border: 1px solid lighten($primaryColor, 20%);
+      background-color: white;
+      outline-width: 0 !important;
+      box-shadow: none !important;
+      transition-delay: -0.2s;
+   }
+
+   input:focus::placeholder {
+      color: transparent;
+   }
+
+   /*
+   Input type Number Delete Arrows
+   */
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+   }
+
+   input[type=number] {
+      -moz-appearance: textfield; /* Firefox */
+   }
+
+
+}
+
+/*
+Style all error input messages
+*/
+#checkboxes-error-msn, #emailErrorMsn, #passErrorMsn, #phoneNumberErrorMsn {
+   color: $errorMsg;
+   font-size: 11px;
+}
+
+#checkboxes-error-msn{
+   margin-left: -16px;
+}
+
+
+label {
+   color: $contentTitlesColor;
+   font-size: 14px;
+}
+
+#tel-label {
+   margin-top: 20px;
+}
+
+.buttons-wrapper {
+   margin-top: 20px;
+
+   button {
+      cursor: pointer;
+      outline-width: 0 !important;
+      box-shadow: none !important;
+      padding: 10px 32px;
+      width: 160px;
+      border-radius: 120px !important;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      border-radius: $radiusButtonValue;
+      border: 2px solid $primaryColor;
+   }
+}
+
+#saveButton, #saveButton:active, #saveButton:visited {
+   background-color: $primaryColor;
+   color: white;
+   transition-duration: 500ms;
+}
+
+#saveButton:hover {
+   background-color: lighten($primaryColor, 8%); /*ver primary color menos um pouco SASS*/
+   border-color: lighten($primaryColor, 8%);
+   transition-duration: 500ms;
+   opacity: 0.9;
+}
+
+#cancelButton, #cancelButton:active, #cancelButton:visited {
+   background-color: $backgroundContentPage;
+   transition-duration: 500ms;
+   color: $primaryColor;
+}
+
+#cancelButton:hover {
+   background-color: $primaryColor !important;
+   color: white;
+   transition-duration: 500ms;
+}
+
+
+
+/*   -------------- BREAK POINTS --------------   */
+
+@media only screen and (max-width: 768px) {
+
+   /*-------- SIDEBAR ---------*/
+
+   /*
+   Logo
+   */
+   #logo {
+      content: url(./icons/LOGO-WDR@2x_challenge_alternative.png);
+      width: 27px;
+   }
+
+   /*
+   Main Links / Tab
+   */
+   .link-navbar {
+      padding: 13px 6px;
+      width: 35px;
+      margin-left: 5px;
+      content: url(./icons/LOGO-WDR@2x_challenge_alternative.png);
+
+   }
+
+   .link-navbar-active { /*secound tab*/
+      padding: 13px 6px;
+      width: 30px;
+      margin-left: 6px;
+      content: url(./icons/007-user_selected.png);
+   }
+
+   #home-tab { /*First tab*/
+      content: url(./icons/005-house.png);
+   }
+
+   #solum-tab { /*Third tab*/
+      content: url(./icons/022-settings-2.png);
+   }
+
+   #name-tab { /*Fourth tab*/
+      content: url(./icons/030-edit.png);
+   }
+
+   hr {
+      width: 120% !important;
+   }
+
+   .theme-color-links {
+      display: none;
+      padding: none;
+   }
+
+   #img-light-side, #img-dark-side  {
+      margin: 0 30%;
+   }
+
+   .navbar-nav {
+      background-color: white;
+   }
+
+}
+
+
+
